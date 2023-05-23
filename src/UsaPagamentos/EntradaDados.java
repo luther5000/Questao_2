@@ -5,22 +5,24 @@ import java.util.Scanner;
 
 class EntradaDados {
     private static Scanner tc = new Scanner(System.in);
+    private static String retorna;
 
 //----------------------------------------------------------------------------------------------------------------------
 
-    //classe que realiza a entrada de uma string padrão
+    //método que realiza a entrada de uma string padrão
     public static String entraString() {
         return tc.nextLine();
     }
 
+    //método para o fechamento do Scanner após o fim do programa
     public static void fechaScanner (){
         tc.close();
     }
 
     //------------------------------------------------------------------------------------------------------------------
-    public static String entraValor(){
 
-        String retorna;
+    //método que realiza a entrada dos valores de compra/pagamento
+    public static String entraValor(){
 
         //criamos uma repetição cuja condição de saída é inserir um valor numérico válido.
         do {
@@ -52,24 +54,43 @@ class EntradaDados {
 
 //----------------------------------------------------------------------------------------------------------------------
 
-    public static String entraChave(){
-
-        String retorna;
+    //método que realiza a entrada das chaves PIX numéricas, CPF e número de celular. Esse método recebe um int da main
+    //para que ele seja passado para o método que verifica, para que ele possa realizar as diferentes verificações
+    //para ambos os casos.
+    public static String entraChave(int a){
 
         //criamos uma repetição cuja condição de saída é inserir um valor numérico válido.
         do {
             retorna = tc.nextLine();
-            if (verificaChave(retorna)) //chamada da função tipo boolean que verifica se o numero inserido eh valido
+            if (verificaChave(retorna, a)) //chamada da função tipo boolean que verifica se o numero inserido eh valido
                 return retorna;
         }while (true);
     }
 
-    public static boolean verificaChave (String s){
+    //método que realiza a verificação das chaves
+    public static boolean verificaChave (String s, int a){
+        //primeiro realizamos a verificação do tamanho dos números, lembrando que a eh a variável que determina o que
+        //está sendo inserido pelo usuário
+        if (a==1)
+            if (s.length() != 8) {
+                JOptionPane.showMessageDialog(null, "Insira um CPF " +
+                        "válida por favor", "ERRO", JOptionPane.ERROR_MESSAGE);
+                return false;
+            }
 
+        if (a==0)
+            if (s.length() != 11) {
+                JOptionPane.showMessageDialog(null, "Insira um número de telefone " +
+                                "válido por favor (11 dígitos com DDD)", "ERRO",
+                        JOptionPane.ERROR_MESSAGE);
+                return false;
+            }
+
+        //agora verificamos se algo além de números foram inseridos usando a tabela ASCCI
         for (int i=0; i<s.length(); i++)
             if (s.charAt(i) < 48 || s.charAt(i) > 57) {
-                JOptionPane.showMessageDialog(null, "Insira apenas " +
-                        "números e, se necessário, um ponto por favor", "ERRO", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog (null, "Insira apenas " +
+                        "números por favor", "ERRO", JOptionPane.ERROR_MESSAGE);
                 return false;
             }
         return true;
@@ -77,13 +98,8 @@ class EntradaDados {
 
     //--------------------------------------------------------------------------------------------------------------------
 
-    //semelhantemente a função entradaNumero, a função entradaEmail cria uma repetição que só irá acabar quando o
-    //usuário inserir um email válido
+    //o método entraEmail realiza a entrada do email
     public static String entradaEmail () {
-
-        //declaração da string que armazena a informação inserida pelo usuário
-        String retorna;
-
         do {
             retorna = tc.nextLine();
             if (verificaEmail(retorna))//chamada da função tipo boolean que retorna se o email inserido foi válido
@@ -96,6 +112,8 @@ class EntradaDados {
 
 
 
+    //método que realiza a verificação do email. Como base foram usadas as regras de criação de email do gmail, fora a
+    //parte de precisar conter gmail após o @
     public static boolean verificaEmail (String s){
 
         //a localização do @ é importante para verificar se o que vem após ele é a formatação do tipo de email (gmail,

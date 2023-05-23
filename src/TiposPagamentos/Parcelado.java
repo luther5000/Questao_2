@@ -1,7 +1,7 @@
 package TiposPagamentos;
 
 public interface Parcelado {
-    byte maxPrestacoes = 10;
 
-    float juros ();
+    //método responsável por calcular os juros de uma comopra parcelada
+    double juros ();
 }

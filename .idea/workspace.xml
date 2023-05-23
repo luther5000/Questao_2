@@ -4,23 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e159f420-2f50-460e-bf07-e6dbb24eecc0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Questao_2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TiposPagamentos/Boleto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TiposPagamentos/CartaoCredito.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TiposPagamentos/CartaoDebito.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TiposPagamentos/Dinheiro.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TiposPagamentos/Pagamentos.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TiposPagamentos/Parcelado.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TiposPagamentos/Pix.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TiposPagamentos/Transferencia.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UsaPagamentos/EntradaDados.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UsaPagamentos/Main.java" afterDir="false" />
+    <list default="true" id="e159f420-2f50-460e-bf07-e6dbb24eecc0" name="Changes" comment="Todos estão com decimal format, faltam os testes">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TiposPagamentos/Boleto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TiposPagamentos/Boleto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TiposPagamentos/CartaoCredito.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TiposPagamentos/CartaoCredito.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TiposPagamentos/CartaoDebito.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TiposPagamentos/CartaoDebito.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TiposPagamentos/Dinheiro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TiposPagamentos/Dinheiro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TiposPagamentos/Pagamentos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TiposPagamentos/Pagamentos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TiposPagamentos/Parcelado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TiposPagamentos/Parcelado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TiposPagamentos/Pix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TiposPagamentos/Pix.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TiposPagamentos/Transferencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TiposPagamentos/Transferencia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UsaPagamentos/EntradaDados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UsaPagamentos/EntradaDados.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UsaPagamentos/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UsaPagamentos/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +25,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="showPreview" value="true" />
+  </component>
   <component name="ProjectId" id="2QCBnWqfqyv5jpUouZHhEG6KIHj" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -38,15 +36,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "onboarding.tips.debug.path": "/home/lutero/IdeaProjects/Questao_2/src/Main.java"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/home/lutero/IdeaProjects/Questao_2/src/Main.java&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -56,9 +54,26 @@
       <option name="presentableId" value="Default" />
       <updated>1684847852610</updated>
     </task>
+    <task id="LOCAL-00001" summary="Todos estão com decimal format, faltam os testes">
+      <created>1684849030888</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1684849030888</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Todos estão com decimal format, faltam os testes">
+      <created>1684849043929</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1684849043929</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Todos estão com decimal format, faltam os testes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Todos estão com decimal format, faltam os testes" />
   </component>
 </project>

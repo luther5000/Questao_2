@@ -1,51 +1,59 @@
 package TiposPagamentos;
 
 public class Boleto implements Pagamentos,Parcelado {
-    private float valor;
+
+//---------------------------------------------------------------------------------
+
+    //declaração dos campos da classe. O valor receve o valor da compra, o numPrestacoes recebe quantas prestações serão
+    //utilizadas pelo comprador para pagar, o juros recebe o valor de juros na compra com base no número de prestações,
+    //o endereço recebe o endereço para o qual o boleto será enviado
+    private double valor;
     private byte numPrestacoes;
-    private static float juros;
+    private static double juros;
     private String endereco;
 
 //------------------------------------------------------------------------------------------------------
 
-    public Boleto(float valor, byte prestacoes, String lugar) {
+    //construtor completo da classe. Diferencial é que ele chama um método, juros(), que calcula os juros da compra
+    public Boleto(double valor, byte prestacoes, String lugar) {
         this.valor = valor;
         numPrestacoes = prestacoes;
         juros = juros();
         endereco = lugar;
     }
 
-
+    //metodo que calcula os juros da compra
     @Override
-    public float realizarPagamento(float valorPago) {
-        if (valorPago == valor)
-            return 0;
-        else if (valorPago > valor) {
-            System.out.println("Troco de " + (valorPago - valor) + "é necessário");
-            return (valorPago - valor);
-        } else
-            return -1;
-    }
-
-    @Override
-    public void imprimirRecibo(float valorPago) {
-        if (realizarPagamento(valorPago) >= 0)
-            System.out.println("PRODUTO............. XXXXX\nVALOR.............. R$" + df.format(valor) + "\n" +
-                    "PAGO................ R$" + df.format(valorPago) + "FORMA DE PAGAMENTO.. Boleto  \n" +
-                    "JUROS............... R$" + df.format(juros) + "LOCAL DE COBRANÇA... " + endereco);
-        else
-            System.out.println("O pagamento completo não foi realizado! Impossível" +
-                    "imprimir o recibo!");
-    }
-
-    @Override
-    public float juros() {
+    public double juros() {
         if (numPrestacoes == 1)
             return 0;
         else if (numPrestacoes < 6)
             return (valor * 8 / 100);
         else
             return (valor * 12 / 100);
+    }
+
+    //o método realizarPagamento verifica se o valor pago foi o suficiente para pagar o valor total devido
+    @Override
+    public double realizarPagamento(double valorPago) {
+        if (valorPago == valor)
+            return 0;
+        else if (valorPago > valor) {
+            System.out.println("Troco de R$" + (valorPago - valor) + " é necessário");
+            return (valorPago - valor);
+        } else
+            return -1;
+    }
+
+    @Override
+    public void imprimirRecibo(double valorPago) {
+        if (realizarPagamento(valorPago) >= 0)
+            System.out.println("PRODUTO............. XXXXX\nVALOR............... R$" + df.format(valor) + "\n" +
+                    "PAGO................ R$" + df.format(valorPago) + "\nFORMA DE PAGAMENTO.. Boleto  \n" +
+                    "JUROS............... R$" + df.format(juros) + "\nLOCAL DE COBRANÇA... " + endereco);
+        else
+            System.out.println("O pagamento completo não foi realizado! Impossível" +
+                    " imprimir o recibo!");
     }
 }
 
